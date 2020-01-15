@@ -14,7 +14,9 @@ namespace Lecture
         */
         public string ReturnFizzIfThreeUsingTernary(int number)
         {
-            return "";
+            //(some condition) ? <use this if true> : <use this if false>;
+            return (number == 3) ? "Fizz" : "";
+            
         }
     }
 }

@@ -14,17 +14,21 @@ namespace Lecture
             If addFive is true, we'll add five to that number
             We'll then return the result
             TOPIC: Stacking Conditional Logic
+            (2, false, false) -> 2
+            (2, false, true) -> 7
+            (2, true, true) -> 5
+            (2, true, true) -> 10
         */
         public int ReturnNumberAfterAddThreeAndAddFive(int number, bool addThree, bool addFive)
         {
-            if (true)
+            if (addThree)
             {
                 number = number + 3;
             }
 
-            // Why can't we use an else here?
+            // Why can't we use an else here? You may need to do both. 
 
-            if (true)
+            if (addFive)
             {
                 number += 5;
             }

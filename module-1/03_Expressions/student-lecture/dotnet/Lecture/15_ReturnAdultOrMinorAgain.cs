@@ -15,7 +15,9 @@ namespace Lecture
         */
         public string ReturnAdultOrMinorAgain(int number)
         {
-            if (true)
+            //(number >= 18) ? "Adult" : "Minor";
+            //or
+            if (!(number < 18))
             {
                 return "Adult";
             }
@@ -23,6 +25,7 @@ namespace Lecture
             {
                 return "Minor";
             }
+            
         }
     }
 }
