@@ -22,7 +22,7 @@ namespace Exercises
         public int DateFashion(int you, int date)
         {
             
-            if (you >= 8 || date >= 8)
+            if (you >= 8 || date >= 8) 
             {
                 if (you <= 2 || date <= 2)
                 {
@@ -34,7 +34,6 @@ namespace Exercises
             {
                 return 0;
             }
-            
             return 1;
         }
 

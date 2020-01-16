@@ -15,7 +15,7 @@ namespace Exercises
          SumDouble(2, 2) → 8
          */
         public int SumDouble(int a, int b)
-        {
+        {   
             if (a != b)
             {
                 return a + b;

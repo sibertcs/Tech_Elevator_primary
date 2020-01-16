@@ -19,7 +19,7 @@ namespace Exercises
         {
             
 
-            if (negative == true)
+            if (negative)
             {
                 if (a < 0 && b < 0)
                 {

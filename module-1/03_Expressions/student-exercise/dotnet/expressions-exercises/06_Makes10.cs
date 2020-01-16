@@ -17,15 +17,11 @@ namespace Exercises
         public bool Makes10(int a, int b)
         {
             bool isTen = false;
-            if (a == 10 || b == 10)
+            if ((a == 10 || b == 10 ) || a + b == 10)
             {
                 isTen = true;
             }
-            if (a + b == 10)
-            {
-                isTen = true;
-            }
-
+            
             return isTen;
         }
 

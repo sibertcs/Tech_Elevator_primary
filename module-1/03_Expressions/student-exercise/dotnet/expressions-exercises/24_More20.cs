@@ -17,11 +17,13 @@ namespace Exercises
          */
         public bool More20(int n)
         {
+            bool isOneOrTwoMore = false;
+
             if (n % 20 == 1 || n % 20 == 2)
             {
-                return true;
+                isOneOrTwoMore = true;
             }
-            return false;
+            return isOneOrTwoMore;
         }
 
     }

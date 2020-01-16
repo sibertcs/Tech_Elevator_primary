@@ -20,7 +20,11 @@ namespace Exercises
         {
 
             bool isWithinTwo = false;
-            if (num % 10 <= 2 || num % 10 >= 8) isWithinTwo = true;
+
+            if (num % 10 <= 2 || num % 10 >= 8)
+            {
+                isWithinTwo = true;
+            }
             return isWithinTwo;
         }
     }
