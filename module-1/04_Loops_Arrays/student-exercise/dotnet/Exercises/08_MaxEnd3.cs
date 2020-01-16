@@ -17,7 +17,17 @@ namespace Exercises
          */
         public int[] MaxEnd3(int[] nums)
         {
-            return new int[] { };
+            int highest = 0;
+            
+            if (nums[0] > nums[nums.Length - 1])
+            {
+                highest = nums[0];
+            }
+            else if (nums[nums.Length - 1] > nums[0])
+            {
+                highest = nums[nums.Length - 1];
+            }
+            return new int[] { highest, highest, highest };
         }
 
     }

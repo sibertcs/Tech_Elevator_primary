@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-       
+
             //1. Creating an array of integers
             int[] quizScores = new int[4];
             quizScores[0] = 100;
@@ -14,8 +14,17 @@ namespace Arrays
             quizScores[2] = 85;
             quizScores[3] = 90;
 
+            //create an init in one step
+            int[] quizScores2 = { 100, 80, 85, 90 };
+            quizScores2[0] = 95 //changes first element to 95
+
+            //get the average
+            int sum = quizScores2[0] + quizScores2[1] + quizScores2[2] + quizScores2[3];
+            double average = sum / quizScores2.Length;
+
             //2. Creating an array of strings
             string[] names = new string[4] { "Josh", "David", "Craig", "Casey" };
+
 
             //3. Create an array of characters that hold "Tech Elevator"        
             char[] letters = { 'T', 'e', 'c', 'h', ' ', 'E', 'l', 'e', 'v', 'a', 't', 'o', 'r' };

@@ -19,12 +19,11 @@ namespace Exercises
          */
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            
             if (isAsleep)
             {
                 return false;
             }
-            if (isMorning)
+            else if (isMorning)
             {
                 if (isMom)
                 {
@@ -32,7 +31,7 @@ namespace Exercises
                 }
                 return false;
             }
-            return true;
+            return false;
 
         }
     }
