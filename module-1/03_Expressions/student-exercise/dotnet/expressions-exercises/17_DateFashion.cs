@@ -21,20 +21,27 @@ namespace Exercises
         */
         public int DateFashion(int you, int date)
         {
-            
-            if (you >= 8 || date >= 8) 
+            bool hasLotOfStyle = (you >= 8 || date >= 8);
+            bool hasLittleStyle = (you <= 2 || date <= 2);
+            int chanceOfGettingTable = 1;
+
+            if (hasLotOfStyle) 
             {
-                if (you <= 2 || date <= 2)
+                if (hasLittleStyle)
                 {
-                    return 0;
+                    chanceOfGettingTable = 0;
                 }
-                return 2; 
+                else
+                {
+                    chanceOfGettingTable = 2;
+                }
+                 
             }
-            else if (you <= 2 || date <= 2)
+            else if (hasLittleStyle)
             {
-                return 0;
+                chanceOfGettingTable = 0;
             }
-            return 1;
+            return chanceOfGettingTable;
         }
 
     }
