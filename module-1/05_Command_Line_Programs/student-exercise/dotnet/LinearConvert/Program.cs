@@ -8,36 +8,35 @@ namespace LinearConvert
         {
             Console.WriteLine("Please enter the length:");
             string strLengthInput = Console.ReadLine();
-            int lengthInput = int.Parse(strLengthInput);
-            double lengthInputAsDouble = (double)lengthInput;
+            double lengthInput = double.Parse(strLengthInput);
+           
 
             //prompt user if value entered is not C or F
 
             Console.WriteLine("Is the measurement in (m)eters or (f)eet?");
             string lengthUnit = Console.ReadLine();
-
-            if (lengthUnit != "f" && lengthUnit != "m")
+            while (lengthUnit != "f" && lengthUnit != "m")
             {
-                Console.WriteLine("Please enter a m for meter or f for feet");
+                Console.WriteLine("Please enter m for meter or f for feet");
                 lengthUnit = Console.ReadLine();
 
             }
-
-            Console.WriteLine(lengthInputAsDouble + lengthUnit + " is " + (double)GetLengthConversion(lengthUnit, lengthInputAsDouble) + GetUnitConvsersion(lengthUnit) + ".");
+            
+            Console.WriteLine(lengthInput + lengthUnit + " is " + Math.Floor((double)GetLengthConversion(lengthUnit, lengthInput)) + GetUnitConvsersion(lengthUnit) + ".");
 
         }
 
-        public static double GetLengthConversion(string lengthUnit, double lengthInputAsDouble) //ConvertsTemp
+        public static double GetLengthConversion(string lengthUnit, double lengthInput) //ConvertsTemp
         {
             double lengthConversion = 0;
             if (lengthUnit == "m")
             {
-                lengthConversion = lengthInputAsDouble * 3.2808399;
+                lengthConversion = lengthInput * 3.2808399;
 
             }
             else if (lengthUnit == "f")
             {
-                lengthConversion = lengthInputAsDouble * 0.3048; 
+                lengthConversion = lengthInput * 0.3048; 
             }
             return lengthConversion;
 

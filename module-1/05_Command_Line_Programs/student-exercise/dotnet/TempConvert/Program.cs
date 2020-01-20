@@ -13,10 +13,7 @@ namespace TempConvert
             string strInputTemp = Console.ReadLine();
             int inputTemp = int.Parse(strInputTemp);
                 
-            if (typeof(int) != inputTemp.GetType())
-            {
-                Console.WriteLine("Please enter a number.");
-            }
+            
             double temperature = (double)inputTemp;
 
             //prompt user if value entered is not C or F
@@ -24,7 +21,7 @@ namespace TempConvert
             Console.WriteLine("Is the temperature in (C)elsius, or (F)arenheit?");
             string tempType = Console.ReadLine();
 
-            if (tempType != "F" && tempType != "C")
+            while (tempType != "F" && tempType != "C")
             {
                 Console.WriteLine("Please enter a C for Celsius or F for Farenheit");
                 tempType = Console.ReadLine();
