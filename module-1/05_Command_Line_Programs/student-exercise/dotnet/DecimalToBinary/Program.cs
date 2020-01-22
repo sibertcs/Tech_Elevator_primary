@@ -17,6 +17,14 @@ namespace DecimalToBinary
                 Console.WriteLine(intBase10Numbers[i] + " in binary is " + ConvertNumberToBinary(intBase10Numbers[i]));
             }
 
+            /*for (int i = 0; i < strBase10NumbersSplit; i++)
+
+            int num = int.Parse(strBase10NumbersSplit[i]);
+            string binary = ConvertNumberToBinary(num);
+            Console.WriteLine(num + " as binary is " + binary); */
+            
+  
+
             Console.ReadLine();
 
 

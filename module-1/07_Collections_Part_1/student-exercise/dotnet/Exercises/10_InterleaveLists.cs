@@ -18,7 +18,59 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
-            return null;
+            List<int> interWoven = new List<int>();
+            
+
+            if (listOne.Count == listTwo.Count)
+            {
+                for (int i = 0; i <= listOne.Count - 1; i++)
+                {
+                    interWoven.Add(listOne[i]);
+                    interWoven.Add(listTwo[i]);
+                }
+            }
+
+            else if (listOne.Count > listTwo.Count)
+            {
+                for (int i = 0; i <= listOne.Count - 1; i++)
+                {
+                    if (i <= listTwo.Count - 1)
+                    {
+                        interWoven.Add(listOne[i]);
+                        interWoven.Add(listTwo[i]);
+                    }
+                    else
+                    {
+                        interWoven.Add(listOne[i]);
+                    }
+
+                }
+ 
+            }  
+            
+            else 
+            {
+                for (int i = 0; i <= listTwo.Count - 1; i++)
+                {
+                    if (i <= listOne.Count - 1)
+                    {
+                        interWoven.Add(listOne[i]);
+                        interWoven.Add(listTwo[i]);
+                    }
+                    else
+                    {
+                        interWoven.Add(listTwo[i]);
+                       
+                    }
+
+                }
+
+            }
+            return interWoven;
+
+
+
+
         }
     }
 }

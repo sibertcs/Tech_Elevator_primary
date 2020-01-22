@@ -17,7 +17,19 @@ namespace Exercises
          */
         public List<string> No4LetterWords(string[] stringArray)
         {
-            return null;
+            List<string> newList = new List<string>();
+            List<string> listWithout4 = new List<string>();
+            newList.AddRange(stringArray);
+
+            for (int i = 0; i <= newList.Count - 1; i++)
+            {
+                if (newList[i].Length != 4)
+                {
+                    listWithout4.Add(newList[i]);  
+                }
+            }
+
+            return listWithout4;
         }
 
     }

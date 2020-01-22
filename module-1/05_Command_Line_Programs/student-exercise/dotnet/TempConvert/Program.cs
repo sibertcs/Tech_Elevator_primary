@@ -47,7 +47,7 @@ namespace TempConvert
             return tempConversion;
 
             }
-        public static string GetType(string tempType) // ConvertsType
+        public static string GetType(string tempType) //ConvertsType
         {
             string typeConversion = " ";
             if (tempType == "F")

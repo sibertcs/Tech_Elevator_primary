@@ -17,7 +17,25 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            //if strength length is zero, return string
+
+            //if str length is one, return string
+
+            //if str length is two, return string
+
+            if (str.Length < 3)
+            {
+                return str;
+            }
+            char strBegin = str[0];
+            char strEnd = str[str.Length - 1];
+            string strMid = str.Substring(1, str.Length - 2).Replace("x", "");
+
+            //strMid = strMid.Replace("x", "");
+
+            return strBegin + strMid + strEnd;
+
+           
         }
     }
 }

@@ -18,7 +18,20 @@ namespace Exercises
          */
         public bool HasBad(string str)
         {
-            return false;
+            bool isBadAt0Or1 = false;
+
+            if (str.Contains("bad"))
+            {
+                if (str.IndexOf("b") == 0 || str.IndexOf("b") == 1)
+                {
+                    isBadAt0Or1 = true;
+                }
+                else
+                {
+                    isBadAt0Or1 = false;
+                }
+            }
+            return isBadAt0Or1;
         }
     }
 }

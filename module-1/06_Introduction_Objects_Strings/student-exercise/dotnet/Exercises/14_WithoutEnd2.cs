@@ -17,7 +17,16 @@ namespace Exercises
          */
         public string WithoutEnd2(string str)
         {
-            return null;
+            string missingFirstLast;
+            if (str.Length > 2)
+            {
+                missingFirstLast = str.Substring(1, str.Length - 2);
+            }
+            else 
+            {
+                missingFirstLast = "";
+            }               
+            return missingFirstLast;
         }
     }
 }

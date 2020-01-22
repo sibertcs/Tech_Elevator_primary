@@ -17,7 +17,9 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+            string removedFirst2 = str.Substring(0, 2);
+            string rotatedLeft2 = str.Substring(2) + removedFirst2;
+            return rotatedLeft2;
         }
     }
 }

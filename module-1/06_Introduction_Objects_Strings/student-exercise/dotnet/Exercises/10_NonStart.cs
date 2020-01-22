@@ -17,7 +17,11 @@ namespace Exercises
          */
         public string NonStart(string a, string b)
         {
-            return null;
+            string omittedFirstChar1 = a.Substring(1, a.Length - 1);
+            string omittedFirstChar2 = b.Substring(1, b.Length - 1);
+            string conWithoutFirstChars = omittedFirstChar1 + omittedFirstChar2;
+
+            return conWithoutFirstChars;
         }
     }
 }

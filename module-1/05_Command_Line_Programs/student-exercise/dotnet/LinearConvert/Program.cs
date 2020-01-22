@@ -11,7 +11,7 @@ namespace LinearConvert
             double lengthInput = double.Parse(strLengthInput);
            
 
-            //prompt user if value entered is not C or F
+            
 
             Console.WriteLine("Is the measurement in (m)eters or (f)eet?");
             string lengthUnit = Console.ReadLine();
