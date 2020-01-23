@@ -12,8 +12,42 @@ namespace TechElevator.Classes
     */
     public class Dog
     {
+        public bool IsSleeping { get; private set; }
+
+        public string MakeSound()
+        {
+            
+            if (IsSleeping == true)
+            {
+                return "Zzzzz...";
+            }
+            else
+            {
+                return "Woof!";
+            }
+            
+        }
         
+        public void Sleep()
+        {
+            IsSleeping = true;
+        }
+
+        public void WakeUp()
+        {
+            IsSleeping = false;
+        }
+        
+        
+        public Dog()
+        {
+            IsSleeping = false;
+        }
+            
+
+
 
 
     }
+
 }
