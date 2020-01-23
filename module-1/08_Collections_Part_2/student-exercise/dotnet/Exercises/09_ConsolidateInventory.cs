@@ -41,39 +41,6 @@ namespace Exercises
                 }
             }
 
-
-
-
-
-
-            /*
-
-                foreach (string key1 in mainWarehouse.Keys)
-            {
-                mergedDictionary[key1] = mainWarehouse[key1];
-
-                foreach (string key2 in remoteWarehouse.Keys)
-                {
-                    
-                    if (key1 == key2)
-                    {
-                        
-                        mergedDictionary[key1] = (mainWarehouse[key1] + remoteWarehouse[key2]);
-                    }
-                    else
-                    {
-                        
-                        mergedDictionary[key2] = remoteWarehouse[key2];
-                    }
-                   
-
-
-                }
-                
-            }
-            */
-
-
             return mergedDictionary;
         }
     }

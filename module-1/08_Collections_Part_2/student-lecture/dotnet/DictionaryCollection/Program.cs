@@ -19,6 +19,8 @@ namespace DictionaryCollection
             //      | "John"    | 75 |
             //      | "Jack"    | 73 |
 
+            Dictionary<string, int> personHeight = new Dictionary<string, int>();
+
             while (input == "yes" || input == "y")
             {
                 Console.Write("What is the person's name?: ");
@@ -29,7 +31,7 @@ namespace DictionaryCollection
 
                 // 2. Check to see if that name is in the dictionary
                 //      bool exists = dictionaryVariable.ContainsKey(key)
-                bool exists = false;    // <-- change this
+                bool exists = personHeight.ContainsKey(name);    // <-- change this
 
                 if (!exists)
                 {
@@ -37,6 +39,8 @@ namespace DictionaryCollection
                     // 3. Put the name and height into the dictionary
                     //      dictionaryVariable[key] = value;
                     //      OR dictionaryVariable.Add(key, value);
+                    
+                    personHeight.Add(name, height); //this will add a new key/value pair.
 
                 }
                 else
@@ -44,6 +48,8 @@ namespace DictionaryCollection
                     Console.WriteLine($"Overwriting {name} with new value.");
                     // 4. Overwrite the current key with a new value
                     //      dictionaryVariable[key] = value;
+
+                    personHeight[name] = height; //this will overwrite the value if key exists.
                 }
 
 
@@ -61,7 +67,15 @@ namespace DictionaryCollection
                 input = Console.ReadLine();
 
                 //5. Let's get a specific name from the dictionary
-
+                if (personHeight.ContainsKey(input))
+                {
+                    int height = personHeight[input];
+                    Console.WriteLine($"Found key {input}. Height is {height}.");
+                }
+                else
+                {
+                    Console.WriteLine($"{input} not found");
+                }
 
             }
             else if (input == "all")
@@ -70,13 +84,30 @@ namespace DictionaryCollection
                 Console.WriteLine(".... printing ...");
 
                 //6. Let's print each item in the dictionary
-
+                foreach (KeyValuePair<string, int> kvp in personHeight)
+                {
+                    string name = kvp.Key;
+                    int height = kvp.Value;
+                    Console.WriteLine($"{name}: {height}");
+                }
             }
 
             Console.WriteLine();
             Console.WriteLine("Done...");
 
             //7. Let's get the average height of the people in the dictionary
+            //make sure to do double division
+
+            double total = 0;
+            int count = 0;
+            foreach (int height in personHeight.Values)
+            {
+                total += height;
+                count++;
+            }
+            Console.WriteLine($"Average height is {total / count}");
+
+            
 
 
 

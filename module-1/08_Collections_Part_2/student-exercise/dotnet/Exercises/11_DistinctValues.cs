@@ -16,20 +16,16 @@ namespace Exercises
          */
         public List<string> DistinctValues(List<string> stringList)
         {
-            HashSet<string> distinctValuesHash = new HashSet<string>();
-            List<string> distinctValues = new List<string>();
-
+            HashSet<string> distinctValues = new HashSet<string>();             
+            
             foreach (string value in stringList)
             {
-                distinctValuesHash.Add(value);
-            }
-
-            foreach (string value in distinctValuesHash)
-            {
                 distinctValues.Add(value);
-
             }
-            return distinctValues;
+            return distinctValues.ToList<string>();
+
+            
+
         }
 
     }

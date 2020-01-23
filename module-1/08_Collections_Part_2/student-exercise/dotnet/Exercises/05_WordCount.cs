@@ -36,8 +36,7 @@ namespace Exercises
                 else
                 {
                     wordCount.Add(word, 1);
-                }
-                    
+                }             
             }
             return wordCount;
         }
