@@ -35,16 +35,29 @@ namespace Exercises
         public double IsItOnSale(string itemNumber)
         {
             // First create a Dictionary that holds this data
-                //"KITCHEN4001"-> 0.20
-                //"GARAGE1070"-> 0.15
-                //"LIVINGROOM"-> 0.10
-                //"KITCHEN6073"-> 0.40
-                //"BEDROOM3434"-> 0.60
-                //"BATH0073"-> 0.15
+            Dictionary<string, double> inventory = new Dictionary<string, double>()
+            {
+                { "kitchen4001", 0.20 },
+                { "garage1070", 0.15 },
+                { "livingroom", 0.10 },
+                { "kitchen6073",  0.40 },
+                { "bedroom3434", 0.60 },
+                { "bath0073", 0.15 }
+            };
 
+            double discount;
+
+            if (inventory.ContainsKey(itemNumber.ToLower()))
+            {
+                discount = inventory[itemNumber.ToLower()]; 
+            }
+            else
+            {
+                discount = 0.00;
+            }
             // Now check the Dictionary you just created for the itemNumber
 
-            return 0.00;
+            return discount;
         }
     }
 }
