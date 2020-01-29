@@ -24,7 +24,7 @@ namespace DeckOfCards
                 katiesHand.Add(deck.DealOne());
                 irvingHand.Add(deck.DealOne());
             }
-            Console.WriteLine("Katies Hand");
+            Console.WriteLine("Sami's Hand");
             foreach(Card c in katiesHand)
             {
                 Console.Write(c+" "); 

@@ -35,19 +35,16 @@ namespace Individual.Exercises.Classes
 
         public void ChangeChannel(int newChannel1)
         {
-                    
-            if (newChannel1 >= 3 && newChannel1 <= 18)
+
+            if (IsOn && newChannel1 >= 3 && newChannel1 <= 18)
             {
-                if (IsOn == true)
-                {
-                    CurrentChannel = newChannel1;
-                } 
+                CurrentChannel = newChannel1;             
             }
         }
 
         public void ChannelUp()
         {
-            if (IsOn == true)
+            if (IsOn)
             {
                 CurrentChannel += 1;
                 if (CurrentChannel > 18)
@@ -58,7 +55,7 @@ namespace Individual.Exercises.Classes
         }
         public void ChannelDown()
         {
-            if (IsOn == true)
+            if (IsOn)
             {
                 CurrentChannel -= 1;
                 if (CurrentChannel < 3)
@@ -69,23 +66,17 @@ namespace Individual.Exercises.Classes
         }
         public void RaiseVolume()
         {
-            if (IsOn == true)
+            if (IsOn && CurrentVolume <= 9)
             {
-                if (CurrentVolume <= 9)
-                {
-                    CurrentVolume += 1;
-                }
+                CurrentVolume += 1;               
             }
         }
 
         public void LowerVolume()
         {
-            if (IsOn == true)
+            if (IsOn && CurrentVolume >= 1)
             {
-                if (CurrentVolume >= 1)
-                {
-                    CurrentVolume -= 1;
-                }
+                CurrentVolume -= 1;               
             }
         }
     }
