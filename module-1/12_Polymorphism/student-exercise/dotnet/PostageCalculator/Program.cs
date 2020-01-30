@@ -14,12 +14,17 @@ namespace PostageCalculator
             string inputWeightStr = Console.ReadLine();
             double inputWeight = double.Parse(inputWeightStr);
             Console.WriteLine("(P)ounds or (O)unces?");
-            string poundsOrOunces = Console.ReadLine();
+            string poundsOrOunces = Console.ReadLine().ToLower();
+            while (poundsOrOunces[0] != 'p' && poundsOrOunces[0] != 'o')
+            {
+                Console.WriteLine("Please enter a P for Pounds or O for Ounces.");               
+                poundsOrOunces = Console.ReadLine();
+            }
             Console.WriteLine("What distance will it be traveling?");
             string inputDistanceStr = Console.ReadLine();
             int inputDistance = int.Parse(inputDistanceStr);
 
-            if (poundsOrOunces == "P")
+            if (poundsOrOunces == "p")
             {
                 inputWeight *= 16;
             }
@@ -35,13 +40,13 @@ namespace PostageCalculator
             deliveryOptions.Add(new SPU2Day());
             deliveryOptions.Add(new SPUNextDay());
 
-
-            Console.WriteLine($"Delivery Method                 $ cost");
-            Console.WriteLine($"--------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("{0, -15} {1, 40}", "Delivery Method","$ cost");
+            Console.WriteLine($"--------------------------------------------------------");
             foreach (IDeliveryDriver deliveryOption in deliveryOptions)
             {
                 double rate = deliveryOption.CalculateRate(inputDistance, inputWeight);
-                Console.WriteLine($"{deliveryOption}, ${rate}, ");
+                Console.WriteLine("{0, -27} {1, 28:C}", deliveryOption, rate);
             }
             
 

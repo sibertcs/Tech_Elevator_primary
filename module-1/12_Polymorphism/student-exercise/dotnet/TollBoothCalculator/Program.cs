@@ -23,13 +23,17 @@ namespace TollBoothCalculator
             double tollTotal = 0;
 
             Console.WriteLine();
-          
+            Console.WriteLine("{0, -20} {1, 18} {2, 14}", "Vehicle", "Distance Traveled", "Toll $");
+            Console.WriteLine("------------------------------------------------------");
 
             foreach (IVehicle vehicle in vehicles)
             {
                 int distance = rand.Next(10, 240);
                 double toll = Math.Round(vehicle.CalculateToll(distance), 2);
-                Console.WriteLine($"{vehicle}, {distance}, ${toll} ");
+                //Console.WriteLine($"{vehicle}, {distance}, ${toll} ");
+                Console.WriteLine("{0, -20} {1, 4} {2, 28:C}", vehicle, distance, toll);
+           
+           
                 distanceTotal += distance;
                 tollTotal += toll;
             }

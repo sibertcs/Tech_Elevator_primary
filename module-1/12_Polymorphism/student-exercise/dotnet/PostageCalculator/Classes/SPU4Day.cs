@@ -10,9 +10,8 @@ namespace PostageCalculator.Classes
         {
 
             {
-                return Math.Round((weight / 16 * 0.0050) * distance, 2);
-
-
+                weight /= 16;
+                return Math.Round((weight * 0.0050) * distance, 2);
             }
         }
         public override string ToString()

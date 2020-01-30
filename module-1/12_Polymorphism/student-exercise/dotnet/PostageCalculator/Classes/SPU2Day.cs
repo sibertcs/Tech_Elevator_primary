@@ -9,7 +9,8 @@ namespace PostageCalculator.Classes
         
         public double CalculateRate(int distance, double weight)
         {
-            return Math.Round((weight / 16 * 0.050) * distance, 2);
+            weight /= 16;
+            return Math.Round((weight * 0.050) * distance, 2);
         }
         public override string ToString()
         {

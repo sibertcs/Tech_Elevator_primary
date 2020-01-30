@@ -39,7 +39,7 @@ namespace PostageCalculator.Classes
         }
         public override string ToString()
         {
-            return "Postal Services (3rd Class)";
+            return "Postal Service (3rd Class)";
         }
 
     }
