@@ -52,7 +52,11 @@ namespace Exercises
                 {"crocodile", "Float" },
             };
 
-            if (animals.ContainsKey(animalName.ToLower()))
+            if (animalName == null)
+            {
+                return "unknown";
+            }
+            else if (animals.ContainsKey(animalName.ToLower()))
             {
                 return animals[animalName.ToLower()];
             }

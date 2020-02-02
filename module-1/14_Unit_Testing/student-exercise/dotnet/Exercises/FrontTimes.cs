@@ -17,6 +17,10 @@ namespace Exercises
          */
         public string GenerateString(string str, int n)
         {
+            if (str == null)
+            {
+                return null;
+            }
             string result = "";
             if (str.Length <= 3)
             {

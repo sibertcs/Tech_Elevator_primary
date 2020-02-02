@@ -16,6 +16,7 @@ namespace Exercises
          */
         public string GetBits(string str)
         {
+            if (str == null) { return null; }
             string result = "";
             for (int i = 0; i < str.Length; i++)
             {
