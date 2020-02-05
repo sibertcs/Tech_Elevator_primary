@@ -7,6 +7,7 @@ namespace FizzWriter
     {
         static void Main(string[] args)
         {
+            
             string directory = @"C:\Users\Student\workspace\csibert-c\module-1\18_FileIO_Writing_out\student-exercise\dotnet";
             string fileName = "FizzBuzz.txt";
             string fullPath = Path.Combine(directory, fileName);

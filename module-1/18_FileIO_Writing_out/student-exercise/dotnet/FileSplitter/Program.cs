@@ -33,54 +33,26 @@ namespace FileSplitter
             using (StreamReader sr = new StreamReader(filePath))
             {
                 while (!sr.EndOfStream)
-                {
-                    //int fileCount = 1;
-                    //int counter = 0;
-                    //int lineCount = File.ReadLines(filePath).Count();
-                    //string fileName = Path.GetFileNameWithoutExtension(filePath);
-                    //string outputFile = fileName + "-" + fileCount + ".txt";
-
-                    //using (StreamWriter sw = new StreamWriter(outputFile, false))                    
-                    //{                       
-                    //    string line = sr.ReadLine();
-                    //    sw.WriteLine(line);
-                    //    counter++;
-                    //    if (counter == 3)
-                    //    {
-                    //        counter = 0;
-                    //        fileCount++;
-                    //    }
-                    //}
+                {                   
                     int lineCount = File.ReadLines(filePath).Count();
+                    int fileSuffix = 1;
+                    int linesWritten = 0;
+
+                    string fileName = Path.GetFileNameWithoutExtension(filePath);
+
                     for (int i = 0; i < lineCount; i++)
-                    {
-
-                        int fileCount = 0;
-                        int counter = 0;
-                        
-                        string fileName = Path.GetFileNameWithoutExtension(filePath);
-                        string outputFile = fileName + "-" + (fileCount) + ".txt";
-                        using (StreamWriter sw = new StreamWriter(outputFile, true))
-                        {
-                            string line = sr.ReadLine();
-                            sw.WriteLine(line);
-                            counter++;
-                            if (counter == 3)
+                    {                       
+                        using (StreamWriter sw = new StreamWriter(($"{fileName}-{fileSuffix}.txt"), true))
+                        {                                                   
+                            sw.WriteLine(sr.ReadLine());            
+                            linesWritten++;
+                            if (linesWritten == numberLinesPerFile)
                             {
-                                counter = 0;
-                                fileCount++;
-                                sw.Close();
-                                
-                                
-
+                                fileSuffix++;
+                                linesWritten = 0;
                             }
-
-
-
                         }
-
                     }
-
                 }
             }
         }
