@@ -8,8 +8,7 @@ namespace FileSplitter
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine(Environment.CurrentDirectory);
+           
             Console.WriteLine("Where is the input file (please include the path to the file) ?");
             string filePath = Console.ReadLine();
 
@@ -39,10 +38,11 @@ namespace FileSplitter
                     int linesWritten = 0;
 
                     string fileName = Path.GetFileNameWithoutExtension(filePath);
+                    FileInfo fi = new FileInfo(filePath);
 
                     for (int i = 0; i < lineCount; i++)
                     {                       
-                        using (StreamWriter sw = new StreamWriter(($"{fileName}-{fileSuffix}.txt"), true))
+                        using (StreamWriter sw = new StreamWriter(($"{fileName}-{fileSuffix}{fi.Extension}"), true))
                         {                                                   
                             sw.WriteLine(sr.ReadLine());            
                             linesWritten++;
@@ -51,8 +51,8 @@ namespace FileSplitter
                                 fileSuffix++;
                                 linesWritten = 0;
                             }
-                        }
-                    }
+                        }                      
+                    }                    
                 }
             }
         }

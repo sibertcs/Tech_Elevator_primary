@@ -11,6 +11,7 @@ namespace file_io_part1_exercises
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Environment.CurrentDirectory);
             string path = Environment.CurrentDirectory;
             string file = "sample-quiz-file.txt";
 
