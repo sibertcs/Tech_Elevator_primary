@@ -133,7 +133,7 @@ ORDER BY lifeexpectancy DESC
 SELECT (gnp - gnpold) AS difference, ABS(gnp - gnpold) as absolute_difference, name
 FROM country 
 WHERE gnp IS NOT NULL AND gnpold IS NOT NULL
-ORDER BY absolute_difference DESC
+ORDER BY absolute_difference ASC
 
 -- 17. The average population of cities in each country (hint: use city.countrycode)
 -- ordered from highest to lowest.
@@ -141,7 +141,7 @@ ORDER BY absolute_difference DESC
 
 SELECT AVG(population) as average_population_cities_in_each_country, countrycode
 FROM city
-GROUP BY countrycode
+GROUP BY city.countrycode
 ORDER BY average_population_cities_in_each_country DESC
 
 	
