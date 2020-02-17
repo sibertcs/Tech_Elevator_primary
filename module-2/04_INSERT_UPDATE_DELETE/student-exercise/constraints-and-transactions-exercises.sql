@@ -115,7 +115,7 @@ DELETE FROM film
 WHERE title = 'Euclidean PI'
 ROLLBACK TRANSACTION
 
---Did not succeed. It is referenced in the film.actor table where film_id is a PK.
+--Did not succeed. It is still a foreign key in other tables.
 
 -- 9. Delete Mathmagical from the category table.
 -- (Did it succeed? Why?)
@@ -125,7 +125,8 @@ DELETE FROM category
 WHERE name = 'Mathmagical'
 ROLLBACK TRANSACTION
 
---Did not succeed. It is referenced in the film_category table where category_id is a PK
+--Did not succeed. It is a foreighn key in the film_category table 
+--
 
 -- 10. Delete all links to Mathmagical in the film_category tale.
 -- (Did it succeed? Why?)
@@ -135,7 +136,7 @@ DELETE FROM film_category
 WHERE category_id = 17
 ROLLBACK TRANSACTION
 
---Succeeded. category_id is both a PK and FK.
+--Succeeded. category_id is both a PK and FK. No foreighn key constraints.
 
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
