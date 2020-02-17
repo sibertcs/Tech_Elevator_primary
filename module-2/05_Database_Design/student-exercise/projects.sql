@@ -41,9 +41,16 @@ CREATE TABLE employee
 	project_id int NOT NULL
 	
 	constraint pk_employee primary key (employee_id),
-	constraint fk_department foreign key (department_id) REFERENCES department (department_id),
-	constraint fk_project foreign key (department_id) REFERENCES department (department_id)
+	constraint fk_department foreign key (department_id) REFERENCES department (department_id)
 );
+
+CREATE TABLE employee_projects
+(
+	employee_id int NOT NULL, 
+	project_id int NOT NULL,
+	CONSTRAINT pk_employee_project_id PRIMARY KEY (employee_id, project_id)
+);
+	
 
 INSERT INTO department (department_name)
 VALUES ('Department Of Microsoft Office Enthusiasts'), 
@@ -53,7 +60,7 @@ INSERT INTO project (project_name, start_date)
 VALUES ('PowerPoint 2021', '2020-02-14'), ('A4B6C7', '1964-12-12'), 
 ('Project Top Secret Project', '2022-02-02'), ('Employee Retention How-To', '2020-02-14')
 
-INSERT INTO employee (job_title, first_name, last_name, gender, birth_date, hire_date, department_id, project_id)
+INSERT INTO employee (job_title, first_name, last_name, gender, birth_date, hire_date, department_id)
 VALUES ('PowerPoint fanatic', 'Bob', 'Bob', 'male', '1972-04-17', '2016-05-14', 1, 1),
 ('Word fanatic', 'Square', 'Doodle', 'male', '1981-08-08', '2014-01-02', 1, 1),
 ('Excel fantatic', 'Wendy', 'Mindy', 'female', '1991-03-03', '2018-09-13', 1, 1), 

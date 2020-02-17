@@ -23,12 +23,71 @@ namespace WorldGeography.DAL
 
         public void AddCity(City city)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO city (name, countrycode, district, population) VALUES (@name, @countrycode, @district, @population);", conn);
+                    cmd.Parameters.AddWithValue("@name", city.Name);
+                    cmd.Parameters.AddWithValue("@countrycode", city.CountryCode);
+                    cmd.Parameters.AddWithValue("@district", city.District);
+                    cmd.Parameters.AddWithValue("@population", city.Population);
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd = new SqlCommand("SELECT MAX(id) from city");
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public IList<City> GetCitiesByCountryCode(string countryCode)
         {
-            throw new NotImplementedException();
+
+            List<City> cities = new List<City>();
+
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM city WHERE countrycode = @countryCode", conn);
+                    cmd.Parameters.AddWithValue("@countryCode", countryCode);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        City city = new City();
+                        city.CityId = Convert.ToInt32(reader["id"]);
+                        city.Name = Convert.ToString(reader["name"]);
+                        city.District = Convert.ToString(reader["district"]);
+                        city.CountryCode = Convert.ToString(reader["countrycode"]);
+                        city.Population = Convert.ToInt32(reader["population"]);
+
+                        cities.Add(city);
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return cities;
+
+
         }
 
     }
