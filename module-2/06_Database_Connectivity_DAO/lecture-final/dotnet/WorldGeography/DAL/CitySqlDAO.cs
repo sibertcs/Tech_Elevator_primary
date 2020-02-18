@@ -36,6 +36,8 @@ namespace WorldGeography.DAL
                     cmd.Parameters.AddWithValue("@district",city.District);
                     cmd.Parameters.AddWithValue("@population", city.Population);
 
+                    ($"UPDATE department SET name = )
+
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand("SELECT MAX(id) from city", conn);
