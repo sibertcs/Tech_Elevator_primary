@@ -8,10 +8,99 @@
     --bg-color: rgba(192, 192, 192, 0.1);
     --subheading: rgba(0, 0, 0, 0.6);
   }
+
+  html {
+    background-color: var(--bg-color);
+  }
+    /*filter: drop-shadow(16px 16px 20px orange) invert(75%); */
+  
+    
   
   * {
     box-sizing: border-box;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
   }
+
+  aside {
+    position: fixed;
+  }
+
+  aside ul {
+    list-style: none;
+    text-align: center;
+  }
+
+  aside ul li {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 0.75px solid var(--light-blue);
+  }
+
+  aside img {
+    max-width: 120px;
+    display: block;
+    margin-left: 20%;
+    margin-right: auto;
+  }
+
+  main {
+    margin-left: 200px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    border-left: 0.75px solid var(--light-blue);
+  }
+
+  aside ul a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  header img {
+    height: 150px;
+    padding-bottom: 20px;
+  }
+
+  .subheading {
+    display: none;
+  }
+
+  main img {
+    padding-bottom: 20px;
+  }
+
+  main > img {
+    width: 100%;
+  }
+  
+  section div {
+    display: inline-block;
+    width: 33%;
+    padding: 10px;
+  }
+
+  section div h2 {
+    color: var(--green);
+  }
+
+  section div h2 i{
+    padding-right: 10px;
+  }
+
+  #what-we-do {
+    border-right: 0.75px solid var(--light-green);
+  }
+
+  #our-work {
+    border-right: 0.75px solid var(--light-green);
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  
+
   
   

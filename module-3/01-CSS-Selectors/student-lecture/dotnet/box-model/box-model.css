@@ -1,16 +1,26 @@
 html * {
   margin: 0;
   padding: 0;
+  text-decoration: wavy;
 }
 #slug_1 {
   background-color: #ECA008;
   padding: 50px;
   margin: 0;
-  border: 3px solid black;
+  border: 3px 
 }
 #slug_2 {
   background-color: #ECA008;
-  padding: 0px;
+  padding: 10px;
   margin: 50px;
   border: 3px solid black;
+}
+
+* {
+  border: 2px solid red;
+}
+
+h1 {
+  background-color: grey;
+  border-
 }
