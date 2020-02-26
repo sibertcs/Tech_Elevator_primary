@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Echo";
+    string word = ViewData["word"].ToString();
+    int count = Convert.ToInt32(ViewData["count"]);
 }
 
 <nav id="page-options">
@@ -10,6 +12,16 @@
     </ul>
 </nav>
 
-@*
-    REPLACE THIS COMMENT SECTION WITH YOUR UNORDERED LIST
-*@
+
+
+<ul>  
+    @{ 
+        string px  = "px";
+    }
+    
+    @while (count != 0)
+    {
+        <li style="font-size:@count@px">@word</li>
+        count -= 1;
+    }
+</ul>

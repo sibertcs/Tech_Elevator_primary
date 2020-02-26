@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "FizzBuzz";
+    int input = Convert.ToInt32(ViewData["number"]);
 }
 
 <nav id="page-options">
@@ -10,6 +11,28 @@
     </ul>
 </nav>
 
-@*
-    REPLACE THIS COMMENT SECTION WITH YOUR UNORDERED LIST
-*@
+
+
+<ul id="fizzbuzz">
+    @for (int i = 1; i <= input; i++)
+    {
+
+        if (i % 5 == 0 && i % 3 == 0)
+        {
+            <li class="fizzbuzz">FizzBuzz!</li>
+        }
+        else if (i % 3 == 0)
+        {
+            <li class="fizz">Fizz!</li>
+        }
+        else if (i % 5 == 0)
+        {
+            <li class="buzz">Buzz!</li>
+        }
+        else
+        {
+            <li> @i </li>
+        }
+    }
+    </ul>
+

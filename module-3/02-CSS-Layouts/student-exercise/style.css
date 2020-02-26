@@ -36,7 +36,6 @@ body {
       font-size: 50px;
       color: var(--grey);
   }
-  
 
   #student-quote {
       grid-area: quote;
@@ -76,7 +75,7 @@ body {
     justify-content: center;
   }
 
-  div #experience > div {
+  #experience > div {
     padding: 15px;
     width: 33%;
     align-items: center;
