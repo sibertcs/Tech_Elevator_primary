@@ -1,0 +1,17 @@
+﻿@model IList<Actor>
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+<h2>SearchResult</h2>
+
+
+<p>Name</p>
+
+@foreach (Actor actor in Model)
+{
+    <p>@actor.FirstName @actor.LastName</p>
+}
+
+
+

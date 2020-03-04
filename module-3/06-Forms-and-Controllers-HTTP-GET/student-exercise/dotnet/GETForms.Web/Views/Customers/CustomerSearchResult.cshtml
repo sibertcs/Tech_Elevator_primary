@@ -1,0 +1,39 @@
+﻿@model IList<Customer>
+@{
+    ViewData["Title"] = "CustomerSearchResult";
+}
+
+<h2>Customer Search Result</h2>
+
+<table class=" = table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            string active = "";
+        }
+        @foreach (Customer customer in Model)
+        {
+            
+            @if (customer.IsActive == true)
+            {
+                active = "yes";
+            }
+            else
+            {
+                active = "no";
+            }
+
+            <tr>
+                <td> @customer.FirstName @customer.LastName</td>
+                <td> @customer.Email</td>
+                <td> @active</td>
+            </tr>
+        }
+    </tbody>
+</table>

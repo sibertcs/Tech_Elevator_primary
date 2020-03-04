@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GETForms.Web.DAL;
 using GETForms.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GETForms.Web.Controllers
 {
@@ -14,9 +15,17 @@ namespace GETForms.Web.Controllers
         /// The request to display an empty search page.
         /// </summary>
         /// <returns></returns>
+        private IFilmDAO filmDAO;
+
+        public FilmsController(IFilmDAO dao)
+        {
+            this.filmDAO = dao;
+        }
         public ActionResult Index()
         {
-            return null;
+            IList<string> genres = filmDAO.GetGenres();
+            ViewData["genres"] = genres;
+            return View();
         }
 
         /// <summary>
@@ -24,10 +33,13 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        public ActionResult SearchResult(FilmSearchModel model)
         {
+            IList<Film> films = filmDAO.GetFilmsBetween(model.Genre, model.MinLength = 0, model.MaxLength=1000);
             /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            return View(films);
         }
+
+        
     }
 }
