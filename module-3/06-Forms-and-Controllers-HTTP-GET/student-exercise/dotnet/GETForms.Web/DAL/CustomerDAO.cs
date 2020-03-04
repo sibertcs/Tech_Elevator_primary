@@ -48,8 +48,8 @@ namespace GETForms.Web.DAL
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT first_name, last_name, email, active FROM customer WHERE last_name LIKE @search OR first_name LIKE @search ORDER BY " +sort, conn);
-                cmd.Parameters.AddWithValue("@LastName", "%" + search + "%");
-                //cmd.Parameters.AddWithValue("@sort", sort);
+                cmd.Parameters.AddWithValue("@search", "%" + search + "%");
+                cmd.Parameters.AddWithValue("@sort", sort);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
