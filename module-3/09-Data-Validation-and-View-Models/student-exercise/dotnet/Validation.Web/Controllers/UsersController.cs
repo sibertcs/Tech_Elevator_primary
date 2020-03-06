@@ -17,6 +17,44 @@ namespace Validation.Web.Controllers
             return View("Index");
         }
 
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult LoginConfirmation(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Login");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult NewUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NewUserConfirmation(RegistrationViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("NewUser");
+            }
+            return View();
+        }
+
+
+
+
+
         // GET: User/Register
         // Return the empty registration view
 

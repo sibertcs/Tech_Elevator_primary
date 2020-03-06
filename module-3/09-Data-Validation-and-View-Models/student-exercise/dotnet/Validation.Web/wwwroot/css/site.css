@@ -40,13 +40,30 @@ body {
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 500px;
+    margin: 8px 0;
+    border-radius: 3px;
+    width: 250px;
+    margin-bottom: 16px;
+}
+label {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
-
+.submit {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    width: 80px;
+}
 
 .field-validation-error {
     color: #ED4337;
     font-weight: bold;
 }
+
+
 
