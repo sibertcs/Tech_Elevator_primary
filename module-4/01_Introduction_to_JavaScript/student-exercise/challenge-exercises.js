@@ -11,6 +11,32 @@
 		iqTest("") → 0 // there are no numbers in the given set
         iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 */
+    function iqTest(sequence){
+        let array = sequence.split(" ");
+        let numberArr = [];
+        array.forEach(element => { 
+            numberArr.push(parseInt(element))
+        });
+        let evenArray = [];
+        let oddArray = [];
+        for (let i = 0; i < numberArr.length - 1; i++){
+            if (numberArr[i] % 2 == 0){
+                evenArray.push(numberArr[i])
+            }
+            else {
+                oddArray.push(numberArr[i])
+            }
+        };
+        if (evenArray.length == 1){
+            let outcast = numberArr.find(element => (element % 2 == 0));
+            return numberArr.indexOf(outcast) + 1;
+        }
+        else if (oddArray.length == 1){
+            let outcast = numberArr.find(element => (element % 2 == 1));
+            return numberArr.indexOf(outcast) + 1;
+        };
+        return 0;
+    }
 
 /*
 2. **titleCase** Write a function that will convert a string into title case, given an optional 
@@ -28,3 +54,41 @@ argument is unused.
 		titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
         titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
+    
+
+
+    function titleCase(string, optional){
+        let converted = "";      
+        let requiredArray = string.split(" ");
+        if (!optional){
+            
+            for (let i = 0; i < requiredArray.length; i++){
+                converted += (requiredArray[i].substr(0, 1).toUpperCase()) + (requiredArray[i].substr(1).toLowerCase()) + " ";
+            }
+        }
+        else {
+            let optionalArray = optional.split(" ");
+            for (let i = 0; i < requiredArray.length; i++){
+                let doesAlreadyContain = false;
+                for (let j = 0; j < optionalArray.length; j++){
+                    if (requiredArray[i].toLowerCase() == optionalArray[j].toLowerCase()){
+                        if(i == 0) {
+                            converted += (requiredArray[i].substr(0, 1).toUpperCase()) + (requiredArray[i].substr(1).toLowerCase()) + " ";
+                            doesAlreadyContain = true;
+                        }
+                        else {
+                            converted += (requiredArray[i].toLowerCase() + " ");
+                            doesAlreadyContain = true;
+                        }                   
+                    }               
+                }
+                if (doesAlreadyContain){
+                    continue;
+                }
+                else {
+                    converted += (requiredArray[i].substr(0, 1).toUpperCase()) + (requiredArray[i].substr(1).toLowerCase()) + " ";
+                }
+            }     
+        }
+        return converted.trim();       
+    }
