@@ -147,8 +147,27 @@ function demo() {
   );
 
   console.log("Filter using an anon function: "+newArray);
+
+  //passing the filter method into another method
+  let evenFilter = (num)=> {
+    return (num%2 == 0);  
+
+  }
+  let evenArray = filterOn(array,evenFilter);
+
+  let oddFilter = (num)=> {
+    return (num%2 == 1);  
+
+  }
+  let oddArray = filterOn(array,oddFilter);
+
+  console.log("Evens:" +evenArray);
+  console.log("Odds" + oddArray);
 }
 
+function filterOn(array,filter){
+  return array.filter(filter);
+}
 
 function isPrime(num) {
   if (num <= 1)
