@@ -106,7 +106,6 @@ namespace Exercises.Tests
             Assert.AreEqual(6, exercises.Sum13(new int[] { 1, 2, 2, 1 }), "Test 1: Input was [1, 2, 2, 1]");
             Assert.AreEqual(2, exercises.Sum13(new int[] { 1, 1 }), "Test 2: Input was [1, 1]");
             Assert.AreEqual(6, exercises.Sum13(new int[] { 1, 2, 2, 1, 13 }), "Test 3: Input was [1, 2, 2, 1, 13]");
-            Assert.AreEqual(6, exercises.Sum13(new int[] { 1, 2, 2, 1, 13,5 }), "Test 3: Input was [1, 2, 2, 1, 13]");
         }
 
         [TestMethod()]

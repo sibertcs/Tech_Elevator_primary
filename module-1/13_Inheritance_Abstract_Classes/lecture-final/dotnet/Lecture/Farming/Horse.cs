@@ -10,7 +10,7 @@ namespace Lecture.Farming
         /// Creates a new horse.
         /// </summary>
         /// <param name="name">The name which the horse goes by.</param>
-        public Horse() : this("HORSE")
+        public Horse() : base("HORSE")
         {
         }
 
@@ -18,13 +18,10 @@ namespace Lecture.Farming
         {
         }
 
-
-        
         public override string eat()
         {
             return "mmmm";
         }
-        
 
         /// <summary>
         /// The single noise the horse makes.

@@ -10,15 +10,10 @@
         dictionary. These will be necessary when generating the links for the appropriate pages on the view.
         You can access these values with the @ViewData["Action"] or @ViewData["Controller"] syntax.
         -->
-    @{ 
-        string action = ViewData["Action"].ToString();
-        string controller = ViewData["Controller"].ToString();
-    }
     <div id="filter-options">
         <h3>Refine By</h3>
         <p>Price</p>
         <ul>
-            <li> <a asp-controller="@controller" asp-action="@action" asp-route-maxPrice=25 asp-route-minRating=2>Under $25</a></li>
             <li><a href="#">Under $25</a></li>
             <li><a href="#">$25 to $50</a></li>
             <li><a href="#">$50 & Above</a></li>

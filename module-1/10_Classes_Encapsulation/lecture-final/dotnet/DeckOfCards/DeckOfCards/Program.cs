@@ -1,7 +1,6 @@
 ﻿using DeckOfCards.Classes;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DeckOfCards
 {
@@ -9,7 +8,6 @@ namespace DeckOfCards
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Hello World!");
             //Card c = new Card(); forbidden
 

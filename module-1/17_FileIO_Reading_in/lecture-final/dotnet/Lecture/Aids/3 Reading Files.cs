@@ -24,52 +24,32 @@ namespace Lecture.Aids
 
             // Create the full path
             string fullPath = Path.Combine(directory, filename);
-            //fullpath was input from teh user
 
-            while (!File.Exists(fullPath))
+            // Wrap the effort in a try-catch block to handle any exceptions
+            try
             {
-                //reprompt the user for the file path
-                string s = "abcl;";
-
-                s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-           
-            }
- 
-                
-                int[] myArray;
-
-                // Wrap the effort in a try-catch block to handle any exceptions
-                try
+                //Open a StreamReader with the using statement
+                using (StreamReader sr = new StreamReader(fullPath))
                 {
-                    myArray = new int[5];
-                    //Open a StreamReader with the using statement
-                    using (StreamReader sr = new StreamReader(fullPath))
+                    // Read the file until the end of the stream is reached
+                    // EndOfStream is a "marker" that the stream uses to determine 
+                    // if it has reached the end
+                    // As we read forward the marker moves forward like a typewriter.
+                    while (!sr.EndOfStream)
                     {
+                        // Read in the line
+                        string line = sr.ReadLine();
                         
-                        // Read the file until the end of the stream is reached
-                        // EndOfStream is a "marker" that the stream uses to determine 
-                        // if it has reached the end
-                        // As we read forward the marker moves forward like a typewriter.
-                        while (!sr.EndOfStream)
-                        {
-                            // Read in the line
-                            string line = sr.ReadLine();
-
-                            // Print it to the screen
-                            Console.WriteLine(line);
-                        }
+                        // Print it to the screen
+                        Console.WriteLine(line);
                     }
                 }
-                catch (IOException e) //catch a specific type of Exception
-                {
-                    Console.WriteLine("Error reading the file");
-                    Console.WriteLine(e.Message);
-                }
-                finally
-                {
-                    //close the database
-                }
-                
+            }
+            catch(IOException e) //catch a specific type of Exception
+            {
+                Console.WriteLine("Error reading the file");
+                Console.WriteLine(e.Message);
+            }
         }
 
 
