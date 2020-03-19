@@ -69,6 +69,17 @@ namespace ProductReviewsAPI.Controllers
             return CreatedAtRoute("GetProductReview", new { id = productReview.Id }, productReview);
         }
 
+        [HttpPost("{id}")]
+        public ActionResult Create([FromBody] ProductReview productReview,int id)
+        {
+            dal.Add(productReview);
+
+            //using parent's created at route and passing in: 1. The name of the action the client uses to get the resource
+            //2. the input parameter needed to get the resource 3. the new object that was created
+            //throw new Exception();
+            return CreatedAtRoute("GetProductReview", new { id = productReview.Id }, productReview);
+        }
+
         /// <summary>
         /// update a review
         /// </summary>

@@ -8,5 +8,10 @@ namespace Lecture.Farming
     {
         public Palimino() : base("Palimino")
         { }
+
+        public override String eat()
+        {
+            return "nom nom nom" + base.eat(); 
+        }
     }
 }

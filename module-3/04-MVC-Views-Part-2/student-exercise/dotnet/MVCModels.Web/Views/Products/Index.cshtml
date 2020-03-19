@@ -7,8 +7,8 @@
 <div id="card-page">
 
     @{
-        ViewData["Action"] = "";
-        ViewData["Controller"] = "";
+        ViewData["Action"] = "Index";
+        ViewData["Controller"] = "Products";
     }
     <partial name="_Filters" />
 
@@ -22,8 +22,8 @@
         <div id="sorting-options">
             <h3>Sort By</h3>
             <ul>
-                <li><a href="#">Price - Low to High</a></li>
-                <li><a href="#">Price - High to Low</a></li>
+                <li><a asp-controller="Products" asp-action="Index" asp-route-sortOrder="PriceLowToHigh">Price - Low to High</a></li>
+                <li><a asp-controller="Products" asp-action="Index" asp-route-sortOrder="PriceHighToLow">Price - High to Low</a></li>
                 <li><a href="#">Rating - High to Low</a></li>
             </ul>
         </div>

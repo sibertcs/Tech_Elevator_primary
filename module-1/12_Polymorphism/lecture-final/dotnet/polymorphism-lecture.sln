@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture", "Lecture\Lecture.csproj", "{10A56BDF-7295-441D-AD52-6A63F5C06E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureTests", "LectureTests\LectureTests.csproj", "{5DB360D1-8A7F-4445-A083-54C2BA5A263F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{10A56BDF-7295-441D-AD52-6A63F5C06E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10A56BDF-7295-441D-AD52-6A63F5C06E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10A56BDF-7295-441D-AD52-6A63F5C06E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB360D1-8A7F-4445-A083-54C2BA5A263F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB360D1-8A7F-4445-A083-54C2BA5A263F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB360D1-8A7F-4445-A083-54C2BA5A263F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB360D1-8A7F-4445-A083-54C2BA5A263F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,18 @@ namespace Lecture.Farming
     /// </summary>
     public abstract class FarmAnimal : ISingable
     {
+        private static int countFarmAnimals = 0;
+        public static int CountFarmAnimals {  get { return countFarmAnimals; } }
+        public static string SizeOfFarm 
+        { 
+            get 
+            {
+                if (countFarmAnimals < 10) return "small";
+                if (countFarmAnimals < 50) return "medium";
+                return "Large";
+            } 
+        }
+
         private bool isSleeping;
         public void sleep()
         {
@@ -33,6 +45,7 @@ namespace Lecture.Farming
         public FarmAnimal(string name)
         {
             Name = name;
+            countFarmAnimals++;
         }
 
         public void reNameIt(string newName)

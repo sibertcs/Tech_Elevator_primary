@@ -11,6 +11,18 @@
 		iqTest("") → 0 // there are no numbers in the given set
         iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 */
+function iqTest(nums){
+    //1. If nums length is 0 return 0
+
+    //2. split nums on a space into an array
+    
+
+    //3. loop through and count evens and odds, keep track of firstEven and firstOdd
+
+    //4. if count even == count odd, return 0
+    //5. if count even > count odd return first odd
+    //6. else return first even
+}
 
 /*
 2. **titleCase** Write a function that will convert a string into title case, given an optional 
@@ -28,3 +40,20 @@ argument is unused.
 		titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
         titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
+function titleCase(title,ignoreList=""){
+    //split the title on spaces into array
+    //split the ignoreList into an ignoreArray
+    //let newTitle ="";
+
+    //foreach loop on the array
+    //   if the element is not in ignoreArray
+    //     make the first character uppercase and the rest of the word lowercase
+    //   and append to newTitle
+    let word = "test";
+    let newWord = word.substr(0,1).toUpperCase() + word.substring(1).toLowerCase();
+
+    let ar = [];
+    return ar.join(" ");
+
+    //return the newTitle
+}

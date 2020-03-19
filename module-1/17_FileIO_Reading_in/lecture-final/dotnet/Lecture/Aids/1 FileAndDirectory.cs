@@ -37,6 +37,7 @@ namespace Lecture.Aids
 
             // Check to see if a directory exists
             bool directoryExists = Directory.Exists(@"C:\TestDirectory\SubDirectory");
+            
 
             if (!directoryExists)
             {

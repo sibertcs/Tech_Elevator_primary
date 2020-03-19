@@ -14,10 +14,18 @@ namespace Exercises
 	     SleepIn(false, false) → true
 	     SleepIn(true, false) → false
 	     SleepIn(false, true) → true
+         SleepIn(true,true) -> true
+
 	     */
         public bool SleepIn(bool weekday, bool vacation)
         {
-            return false;
+            bool sleepIn = false;
+            if (vacation || !weekday)
+            {
+                sleepIn = true; 
+            }
+
+            return sleepIn; 
         }
 
     }

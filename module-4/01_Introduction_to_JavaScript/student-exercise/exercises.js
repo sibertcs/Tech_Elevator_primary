@@ -5,13 +5,18 @@
 		sumDouble(1, 2) → 3
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
+		*/
 
-		function sumDouble(x, y) {
-			// do logic here
-			// return result;
-			return x + y;
-        }
-*/
+function sumDouble(x, y) {
+	// do logic here
+	// return result;
+	let multiplier = 1;
+	if (x == y) {
+		multiplier = 2;
+	}
+	return (x + y) * multiplier;
+}
+
 
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
@@ -21,6 +26,12 @@
 		hasTeen(20, 19, 10) → true
 		hasTeen(20, 10, 13) → true
 */
+function hasTeen(x, y, z) {
+	if (x >= 13 && x <= 19) {
+		return true;
+	}
+	return false;
+}
 
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
@@ -103,6 +114,24 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+function filterMultiplesOfX(array, num) {
+
+	let multAr = [];
+
+	//for loop
+	//foreach loop
+	array.forEach(element => {
+		if (element % num == 0) {
+			multAr.push(element);
+		}
+
+	});
+	// if the element in array mod num is zero
+	//   add it to multAr
+	//
+	return multAr;
+	//multAr.push(1);
+}
 
 /*
 12. **createObject** Write a function that creates an object with a property called 
@@ -116,3 +145,11 @@ firstName, lastName, and age. Populate the properties with your values.
 		age
 	}
 */
+function createObject() {
+	let obj = {
+		firstName: "Katie",
+		lastName: "Dwyer",
+		age: 21
+	};
+	return obj;
+}

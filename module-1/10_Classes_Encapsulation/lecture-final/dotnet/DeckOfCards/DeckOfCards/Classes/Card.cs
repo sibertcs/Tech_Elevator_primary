@@ -53,7 +53,7 @@ namespace DeckOfCards.Classes
 
         public override string ToString()
         {
-            return faceValues[Value] +" of "+ Suit; //suitSymbols[Suit];
+            return faceValues[Value] + suitSymbols[Suit];
         }
         
         private static Dictionary<string,char> suitSymbols = new Dictionary<string, char>()

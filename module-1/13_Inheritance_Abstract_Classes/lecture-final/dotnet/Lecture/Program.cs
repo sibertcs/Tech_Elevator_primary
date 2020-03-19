@@ -8,6 +8,9 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
+            Palimino p = new Palimino();
+            p.eat(); 
+
            //
             // OLD MACDONALD
             //
@@ -73,6 +76,9 @@ namespace Lecture
             {
                 Console.Write(thingToSell.Name + ", ");
             }
+
+            Console.WriteLine("There are " + FarmAnimal.CountFarmAnimals + " animals on the farm. which makes it size " + FarmAnimal.SizeOfFarm);
+            
 
             Console.ReadLine();
         }
