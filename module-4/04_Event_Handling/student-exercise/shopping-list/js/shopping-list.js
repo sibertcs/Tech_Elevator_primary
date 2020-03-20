@@ -18,8 +18,7 @@ const groceries = [
  * of the pageTitle variable that was set above.
  */
 function setPageTitle() {
-  const title = document.getElementById('title');
-  title.innerText = pageTitle;
+  document.getElementById("title").innerText = pageTitle;
 }
 
 /**
@@ -37,5 +36,50 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
+
+  const groceryItems = document.querySelectorAll("li");
+  
+  groceryItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      markItemComplete(item);
+    })
+    item.addEventListener('dblclick', () => {
+      markItemIncomplete(item);
+    })
+
+  })
+
+  function markItemComplete(element){
+    element.classList.add("completed");
+    element.querySelector('i').classList.add('completed');
+  };
+
+  function markItemIncomplete(element){
+    element.classList.remove("completed");
+    element.querySelector('i').classList.remove('completed');
+  };
+
+  const changeAll = document.getElementById('toggleAll')
+  changeAll.addEventListener('click', () => {
+    groceryItems.forEach((item) => {
+      if(allItemsIncomplete){
+        markItemComplete(item);
+     
+        changeAll.innerText = 'Mark All Incomplete';
+      }
+      else {
+        markItemIncomplete(item);
+     
+        changeAll.innerText = 'Mark All Complete';
+      }
+    })
+    allItemsIncomplete = !allItemsIncomplete;
+  })
+
+  
+})
+
+
