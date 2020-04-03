@@ -1,8 +1,8 @@
 <template>
     <div class="shopping-list">
-        <h2>{{title}}</h2>
+        <h2>{{this.title}}</h2>
         <ul>
-            <li v-for="item in data" 
+            <li v-for="item in filteredList" 
                 v-bind:key="item.id" 
                 v-bind:class="{ completed: item.completed }" 
                 v-on:click="changeStatus(item.id,$event)">
@@ -18,7 +18,9 @@
 export default {
     name: 'shopping-list',
     props: {
-
+        title: String,
+        filterText: String,
+        list: Array
     },
     data() {
         return {
@@ -27,8 +29,8 @@ export default {
     },
     methods: {
         changeStatus(id,event) {
-            const arrIndex = this.data.findIndex((item) => item.id == id);
-            this.data[arrIndex].completed = !this.data[arrIndex].completed;
+            const arrIndex = this.list.findIndex((item) => item.id == id);
+            this.list[arrIndex].completed = !this.list[arrIndex].completed;
             
             // the checkbox might not have been target of the click event
             if( event.target.type != 'checkbox' ) {
@@ -38,7 +40,11 @@ export default {
         }
     },
     computed: {
-
+        filteredList() {
+            const filter = new RegExp(this.filterText,'i');
+            return this.list.filter(item => item.name.match(filter));
+            
+        }
     }
 }
 </script>

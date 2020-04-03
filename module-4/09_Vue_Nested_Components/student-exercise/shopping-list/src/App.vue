@@ -1,24 +1,54 @@
 <template>
   <div id="app">
     <h1>Nested Components Exercise</h1>
+    <shopping-search v-on:filter-list="handleFilter"></shopping-search>
+    <shopping-list title="Grocery Store" v-bind:list="groceries" v-bind:filterText="filter"></shopping-list>
+    <shopping-list title="Costco" v-bind:list="costco" v-bind:filterText="filter"></shopping-list>
+    <shopping-list title="Target" v-bind:list="target" v-bind:filterText="filter"></shopping-list>
 
   </div>
 </template>
 
 <script>
+import ShoppingList from '@/components/ShoppingList';
+import ShoppingSearch from '@/components/ShoppingSearch';
 
 export default {
   name: 'app',
   components: {
-
+    ShoppingList,
+    ShoppingSearch
   },
   data() {
     return {
-      
+      filter: '',
+      groceries: [
+        { id: 1, name: 'Oatmeal', completed: false },
+        { id: 2, name: 'Milk', completed: false },
+        { id: 3, name: 'Banana', completed: false },
+        { id: 4, name: 'Strawberries', completed: false },
+        { id: 5, name: 'Lunch Meat', completed: false }
+      ],
+      costco: [
+        { id: 1, name: 'Paper Towels', completed: false },
+        { id: 2, name: 'Toilet Paper', completed: false },
+        { id: 3, name: 'Bottled Water', completed: false },
+        { id: 4, name: 'Paper Plates', completed: false },
+        { id: 5, name: 'Pepsi', completed: false }
+      ],
+      target: [
+        { id: 1, name: 'Baby Food', completed: false },
+        { id: 2, name: 'Candles', completed: false },
+        { id: 3, name: 'Aspirin', completed: false },
+        { id: 4, name: 'Dish Soap', completed: false },
+        { id: 5, name: 'Laundry Soap', completed: false }
+      ]
     }
   },
   methods: {
-
+    handleFilter(query){
+      this.filter = query;
+    }
   }
 }
 </script>
