@@ -1,7 +1,7 @@
 <template>
   <div class="house">
     <h1>House</h1>
-    <todo-list :todos="data" />
+    <todo-list :todos="[]" />
   </div>
 </template>
 

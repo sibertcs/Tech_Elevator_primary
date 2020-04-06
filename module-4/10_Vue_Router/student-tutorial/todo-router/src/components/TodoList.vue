@@ -1,7 +1,7 @@
 <template>
   <div class="todos">
     <ul class="todos">
-      <li v-for="todo in data" :key="todo.id">
+      <li v-for="todo in todos" :key="todo.id">
         {{ todo.title }}
       </li>
     </ul>
